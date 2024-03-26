@@ -73,4 +73,19 @@ const openDialog = (id) => {
   document.getElementById(id).classList.remove("hidden");
 };
 
+const showRecipeForm = (e) => {
+  e.preventDefault();
+  openDialog("add-recipe-form");
+};
+
+const addIngredient = (e) => {
+  e.preventDefault();
+  const section = document.getElementById("ingredient-boxes");
+  const input = document.createElement("input");
+  input.type = "text";
+  section.append(input);
+};
+
 showRecipes();
+document.getElementById("add-link").onclick = showRecipeForm;
+document.getElementById("add-ingredient").onclick = addIngredient;
